@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Indie+Flower&display=swap');
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-container {
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .sentence {
+            font-size: 16px;
+        }
+        .buttons {
+            display: flex;
+        }
+        .buttons button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: linear-gradient(180deg, #FF7969 0%, #FF3597 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .buttons button:hover {
+            background: linear-gradient(180deg, #FF7969 0%, #FF3597 100%);
+        }
+        .buttons .square-button {
+            width: 45px;
+            height: 45px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 5px;
+            background: linear-gradient(180deg, #FF7969 0%, #FF3597 100%);
+        }
+        .buttons .square-button svg {
+            fill: white;
+        }
+        .sparkle-big {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 10px;
+            left: 5px;
+        }
+        .sparkle-medium {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+        .sparkle-small {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .content {
+            flex-grow: 1;
+            margin: 20px 50px 0 50px;
+            background-color: white;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        .moodboard-title {
+            font-family: 'Lobster Two', cursive;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 2.5px 0 0px 0;
+            color: black;
+            text-align: center;
+            width: 100%;
+        }
+        .moodboard {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-left: 20px;
+            align-items: center;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+        .square1 {
+            --square1-width: 250px;
+            --square1-height: 200px;
+            --square1-top-margin: 0px;
+            --square1-bottom-margin: 0px;
+            width: var(--square1-width);
+            height: var(--square1-height);
+            margin-top: var(--square1-top-margin);
+            margin-bottom: var(--square1-bottom-margin);
+            background-color: #F0F0F0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px; /* Rounded corners */
+            overflow: hidden; /* To ensure image fits inside the rounded corners */
+            position: relative;
+        }
+
+        .square2 {
+            --square2-width: 250px;
+            --square2-height: 300px;
+            --square2-top-margin: 0px;
+            --square2-bottom-margin: 0px;
+            width: var(--square2-width);
+            height: var(--square2-height);
+            margin-top: var(--square2-top-margin);
+            margin-bottom: var(--square2-bottom-margin);
+            background-color: #F0F0F0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px; /* Rounded corners */
+            overflow: hidden; /* To ensure image fits inside the rounded corners */
+            position: relative;
+        }
+
+        .square3 {
+            --square3-width: 250px;
+            --square3-height: 300px;
+            --square3-top-margin: -100px;
+            --square3-bottom-margin: 0px;
+            width: var(--square3-width);
+            height: var(--square3-height);
+            margin-top: var(--square3-top-margin);
+            margin-bottom: var(--square3-bottom-margin);
+            background-color: #F0F0F0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px; /* Rounded corners */
+            overflow: hidden; /* To ensure image fits inside the rounded corners */
+            position: relative;
+        }
+
+        .square4 {
+            --square4-width: 250px;
+            --square4-height: 200px;
+            --square4-top-margin: 0px;
+            --square4-bottom-margin: 0px;
+            width: var(--square4-width);
+            height: var(--square4-height);
+            margin-top: var(--square4-top-margin);
+            margin-bottom: var(--square4-bottom-margin);
+            background-color: #F0F0F0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px; /* Rounded corners */
+            overflow: hidden; /* To ensure image fits inside the rounded corners */
+            position: relative;
+        }
+
+        .inner-square {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .inner-square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer {
+            text-align: center;
+            margin: 0 50px 20px 50px;
+            color: #737373;
+            font-size: 12px;
+        }
+        .footer svg {
+            fill: #737373;
+            width: 12px;
+            height: 12px;
+            vertical-align: middle;
+        }
+        .todo-container {
+            width: 230px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: absolute;
+            top: 328px;
+            left: 639px;
+        }
+        .todo-title {
+            font-family: 'Lobster Two', cursive;
+            background-color: #FFEEEC;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .todo-list {
+            background-color: #FFADC3;
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .todo-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .todo-list li {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 5px 0;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        .todo-list input[type="checkbox"] {
+            margin-right: 10px;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid pink;
+            border-radius: 50%;
+            background-color: #fff;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .todo-list input[type="checkbox"]:checked::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #FF4F83;
+            border-radius: 50%;
+        }
+        .todo-text {
+            flex-grow: 1;
+            text-align: left;
+        }
+        .delete-icon {
+            cursor: pointer;
+            fill: black;
+            width: 14px;
+            height: 14px;
+            margin-left: 10px;
+        }
+        .todo-input {
+            background-color: #FFADC3;
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .todo-input input {
+            flex-grow: 1;
+            padding: 5px;
+            border: none;
+            border-radius: 3px 0 0 3px;
+        }
+        .todo-input button {
+            padding: 5px;
+            border: none;
+            background-color: white;
+            color: #FF3597;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+        }
+        .left-square-container {
+            position: absolute;
+            left: 500px; /* You can adjust this value to move the square horizontally */
+            top: 60px; /* You can adjust this value to move the square vertically */
+        }
+        .left-square {
+            width: 370px;
+            height: 233px;
+            background-color: #FFFBEA;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px; /* Rounded edges */
+            position: relative;
+        }
+        .note-content {
+            font-family: 'Indie Flower', cursive; /* Handwriting font */
+            font-size: 20px; /* Big font size */
+            color: black;
+            outline: none;
+            width: 80%;
+            height: 60%;
+            padding: 10px;
+            text-align: center;
+            overflow: hidden;
+            border: 0px solid black; /* Add border */
+        }
+        .note-content[contenteditable]:empty:before {
+            content: attr(placeholder);
+            color: #bbb;
+        }
+        .tape.locked-design {
+            position: absolute;
+        }
+
+        /* Timer styles */
+        .timer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffe6e6;
+            border: 2px solid #ffcccc;
+            width: 200px; /* Adjusted size */
+            height: 200px; /* Adjusted size */
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .time-input-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .time-input {
+            font-size: 1.5em; /* Adjusted font size */
+            text-align: center;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #d18b8b;
+            width: 30px; /* Adjusted width */
+        }
+        .time-input-separator {
+            font-size: 1.5em; /* Adjusted font size */
+            color: #d18b8b;
+        }
+        .progress-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            width: 150px; /* Adjusted the size to 150px */
+            height: 150px; /* Adjusted the size to 150px */
+        }
+        .progress-circle circle {
+            transition: stroke-dashoffset 1s linear;
+        }
+        .timer-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 20px); /* Adjusted width */
+            position: absolute;
+            bottom: 10px; /* Adjusted bottom position */
+            padding: 0 10px; /* Adjusted padding */
+        }
+        .timer-buttons button {
+            padding: 5px; /* Adjusted padding */
+            font-size: 0.8em; /* Adjusted font size */
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px; /* Adjusted width */
+            height: 30px; /* Adjusted height */
+            border-radius: 50%;
+            background-color: #ffcccc;
+        }
+        .timer-buttons svg {
+            width: 16px; /* Adjusted size */
+            height: 16px; /* Adjusted size */
+            fill: #d18b8b;
+        }
+
+        .timer-container-wrapper {
+            position: absolute;
+            left: 405px; /* Adjust this value to position the timer horizontally */
+            top: 376px; /* Adjust this value to position the timer vertically */
+        }
+      
+        .tip-jar-button {
+            position: absolute;
+            left: -880px; /* Adjust this value to position the button horizontally within the parent */
+            top: 527px; /* Adjust this value to position the button vertically within the parent */
+            padding: 10px 20px;
+            background: linear-gradient(180deg, #FF7969 0%, #FF3597 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 295px; /* Set the width of the button */
+            height: 40px; /* Set the height of the button */
+        }
+
+        /* Flip Clock Styles */
+        .flip-clock-container {
+            position: absolute;
+            left: 16px; /* Adjust this value to position the clock horizontally */
+            top: 335px; /* Adjust this value to position the clock vertically */
+            transform: scale(var(--scale-factor));
+            transform-origin: top left; /* Adjust origin as needed */
+        }
+
+        /* Adjust this variable to resize the flip clock */
+        :root {
+            --scale-factor: 1.2; /* Set your desired scale factor here */
+        }
+
+        .clock {
+            display: flex;
+            font-size: 3rem;
+            color: #ffffff;
+        }
+
+        .flip-card {
+            perspective: 1000px;
+            margin: 0 2px;
+            position: relative;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 120px;
+            height: 160px;
+            text-align: center;
+            line-height: 160px;
+            border-radius: 10px;
+            background-color: #FFACC2;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+        }
+
+        .flip-card-front {
+            background-color: #FFACC2;
+        }
+
+        .flip-card-back {
+            background-color: #FFACC2;
+            color: #ffffff;
+            transform: rotateX(180deg);
+        }
+
+        .flip-card.flip .flip-card-inner {
+            animation: flip-animation 0.5s ease-in-out forwards;
+        }
+
+        .flip-card-inner::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background-color: #ffffff;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+
+        .day-name {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+
+        @keyframes flip-animation {
+            0% { transform: rotateX(0deg); }
+            50% { transform: rotateX(-90deg); }
+            100% { transform: rotateX(-180deg); }
+        }
+
+        .small-square {
+            width: 85px;
+            height: 85px;
+            background-color: gray;
+            border: 1px solid #737373;
+            position: absolute; /* This allows you to position it within the parent element */
+            left: -875px; /* Adjust this value to position the square horizontally */
+            top: 20px; /* Adjust this value to position the square vertically */
+            border-radius: 5px; /* Adjust the value for rounder corners */
+            cursor: pointer; /* Add pointer cursor */
+            display: flex; /* Add flexbox for centering */
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            overflow: hidden; /* Hide overflow */
+        }
+
+        .small-square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text-container {
+            position: absolute;
+            top: 40px; /* Adjust this value to move the text container vertically */
+            left: -770px; /* Adjust this value to move the text container horizontally */
+            font-family: 'Arial', sans-serif; /* Formal font */
+            font-weight: bold; /* Bold text */
+        }
+
+        .editable-text {
+            outline: none;
+            text-align: left; /* Left alignment */
+            color: black; /* Text color */
+            white-space: nowrap;
+        }
+
+        .editable-text[contenteditable]:empty:before {
+            content: attr(placeholder);
+            color: #bbb;
+        }
+
+        .text-container-2 {
+            position: absolute;
+            top: 65px; /* Adjust this value to move the second text container vertically */
+            left: -770px; /* Adjust this value to move the second text container horizontally */
+            font-family: 'Arial', sans-serif; /* Formal font */
+            font-weight: bold; /* Bold text */
+        }
+
+        .editable-text-2 {
+            outline: none;
+            text-align: left; /* Left alignment */
+            color: gray; /* Text color */
+            white-space: nowrap;
+            -webkit-user-modify: read-write-plaintext-only; /* Disable autocorrect */
+            font-size: 12px; /* Adjust the font size as needed */
+        }
+
+        .editable-text-2[contenteditable]:empty:before {
+            content: attr(placeholder);
+            color: #bbb;
+        }
+
+        .bio-container {
+            position: absolute;
+            top: 120px; /* Adjust this value to move the bio container vertically */
+            left: -875px; /* Adjust this value to move the bio container horizontally */
+            width: 200px; /* Adjust the width of the bio container */
+        }
+
+        .bio-title {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .bio-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            color: black;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            height: 60px; /* Adjust the height of the bio text area */
+            white-space: pre-wrap;
+        }
+
+        .bio-text[contenteditable]:empty:before {
+            content: attr(placeholder);
+            color: #bbb;
+        }
+
+        .buttons .custom-button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #ff4f83;
+            border: 2px solid #ff4f83;
+            border-radius: 5px;
+            cursor: pointer;
+            background: none; /* Ensure no background gradient */
+            box-shadow: none; /* Ensure no box-shadow */
+        }
+
+        /* Override any hover effects */
+        .buttons .custom-button:hover {
+            background-color: white; /* Maintain the same background color on hover */
+            color: #ff4f83; /* Maintain the same text color on hover */
+            border: 2px solid #ff4f83; /* Maintain the same border color on hover */
+            box-shadow: none; /* Ensure no box-shadow on hover */
+            background-image: none; /* Ensure no background gradient on hover */
+        }
+      @keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.second-theme {
+    background: linear-gradient(270deg, #FF6980, #f590ab);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+/* Make the content container's background and shadows invisible */
+.second-theme .content {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Ensure the children of the content remain visible */
+.second-theme .content > * {
+    visibility: visible;
+}
+
+/* Change the color of the moodboard title in the second theme */
+.second-theme .moodboard-title {
+    color: white;
+}
+
+/* Change the color of the flip clock cards in the second theme */
+.second-theme .flip-card-inner {
+    background-color: #ffcad3;
+}
+
+.second-theme .flip-card-front,
+.second-theme .flip-card-back {
+    background-color: #ffcad3;
+}
+      body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+#particles-js {
+    position: fixed; /* Changed from absolute to fixed */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure it is behind other content */
+}
+
+.second-theme #particles-js .particles-js-canvas-el {
+    filter: blur(1px); /* Apply less blur to particles in the second theme */
+}
+      .star-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: star-animation 1s ease-out forwards;
+}
+
+@keyframes buttonClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.square-button {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    background: linear-gradient(180deg, #FF7969 0%, #FF3597 100%);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.square-button:active {
+    animation: buttonClick 0.3s forwards;
+}
+
+.square-button svg {
+    fill: white;
+}
+</style>
+</head>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<body>
+      <div id="particles-js"></div>
+    <div class="header-container">
+        <header class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <div class="sentence">
+                    <p>Your daily destination for Productivity & Creativity</p>
+                </div>
+            </div>
+          <div id="particles-js"></div>
+            <div class="buttons">
+                <button class="custom-button">My Small Business</button>
+                <button>Budget Planner</button>
+                <button class="square-button">
+                    <svg class="sparkle-big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"/>
+                    </svg>
+                    <svg class="sparkle-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"/>
+                    </svg>
+                    <svg class="sparkle-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+    </div>
+    <div class="content">
+        <div class="timer-container-wrapper">
+            <div class="timer-container">
+                <div class="time-input-container">
+                    <input type="text" id="hoursInput" class="time-input" value="00" maxlength="2" onfocus="this.select()" oninput="validateInput(this, 23)">
+                    <span class="time-input-separator">:</span>
+                    <input type="text" id="minutesInput" class="time-input" value="00" maxlength="2" onfocus="this.select()" oninput="validateInput(this, 59)">
+                    <span class="time-input-separator">:</span>
+                    <input type="text" id="secondsInput" class="time-input" value="00" maxlength="2" onfocus="this.select()" oninput="validateInput(this, 59)">
+                </div>
+                <svg class="progress-circle" width="150" height="150">
+                    <circle cx="75" cy="75" r="70" stroke="#ffcccc" stroke-width="4" fill="none" />
+                    <circle id="progress" cx="75" cy="75" r="70" stroke="#d18b8b" stroke-width="4" fill="none" stroke-dasharray="439.82" stroke-dashoffset="439.82" />
+                </svg>
+                <div class="timer-buttons">
+                    <button id="startPauseButton" onclick="startPauseTimer()">
+                        <svg id="startIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <svg id="pauseIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <button onclick="stopTimer()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="left-square-container">
+            <div class="left-square">
+                <div class="tape locked-design" style="left: 195px; top: -23px; transform: translateX(-50%) rotate(-10deg);">
+                    <svg width="110" height="50" viewBox="0 0 220 100" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="split-gradient" x1="0" y1="0" x2="0" y2="1" gradientTransform="rotate(0)">
+                                <stop id="top-color" offset="50%" style="stop-color:#D9B9BF;stop-opacity:1" />
+                                <stop id="bottom-color" offset="50%" style="stop-color:#FFCAD3;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="0,0 14,10 4,20 16,30 2,40 18,50 6,60 20,70 8,80 0,80 
+                                         190,80 178,70 192,60 180,50 194,40 182,30 196,20 184,10 198,0 190,0"
+                                 style="fill:url(#split-gradient);stroke-width:0;" />
+                    </svg>
+                </div>
+                <div class="note-content" contenteditable="true" placeholder="Write your note here..." spellcheck="false" oninput="limitCharacters(this, 130)" onkeydown="handleKeyDown(event, this, 130)"></div>
+            </div>
+        </div>
+        <div class="flip-clock-container">
+            <div class="clock">
+                <div class="flip-card" id="hours">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">00</div>
+                        <div class="flip-card-back">00</div>
+                    </div>
+                    <div class="day-name" id="day-name"></div>
+                </div>
+                <div class="flip-card" id="minutes">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">00</div>
+                        <div class="flip-card-back">00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="todo-container">
+            <div class="todo-title">To-Do List</div>
+            <div class="todo-list">
+                <ul id="todo-list-ul"></ul>
+            </div>
+            <div class="todo-input">
+                <input type="text" id="todo-input" placeholder="Add new to-do">
+                <button onclick="addTodo()">Add</button>
+            </div>
+        </div>
+        <div class="moodboard">
+            <div class="moodboard-title">My MoodBoard</div>
+            <div class="row">
+                <div class="square square1">
+                    <div class="inner-square" id="drop-area1"></div>
+                    <input type="file" id="file-input1" style="display: none;" onchange="handleFileSelect(event, 'drop-area1')">
+                </div>
+                <div class="square square2">
+                    <div class="inner-square" id="drop-area2"></div>
+                    <input type="file" id="file-input2" style="display: none;" onchange="handleFileSelect(event, 'drop-area2')">
+                </div>
+            </div>
+            <div class="row">
+                <div class="square square3">
+                    <div class="inner-square" id="drop-area3"></div>
+                    <input type="file" id="file-input3" style="display: none;" onchange="handleFileSelect(event, 'drop-area3')">
+                </div>
+                <div class="square square4">
+                    <div class="inner-square" id="drop-area4"></div>
+                    <input type="file" id="file-input4" style="display: none;" onchange="handleFileSelect(event, 'drop-area4')">
+                </div>
+                <button class="tip-jar-button">MY TIP JAR ❤️</button>
+                <div class="small-square" id="small-square">
+                    <input type="file" id="small-square-input" style="display: none;" onchange="handleFileSelect(event, 'small-square')">
+                </div>
+                <div class="text-container">
+                    <div contenteditable="true" class="editable-text" placeholder="Your name" spellcheck="false" oninput="limitCharacters(this, 20)" onkeydown="handleKeyDown(event, this, 20)"></div>
+                </div>
+                <div class="text-container-2">
+                    <div contenteditable="true" class="editable-text-2" spellcheck="false" placeholder="@username" oninput="limitCharactersWithPrefix(this, 20, '@')" onkeydown="handleKeyDownWithPrefix(event, this, 20, '@')"></div>
+                </div>
+                <div class="bio-container">
+                    <div class="bio-title">Bio</div>
+                    <div class="bio-text" contenteditable="true" placeholder="Write your bio here..." spellcheck="false"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>This website was created with love 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg> 
+            and it will remain free forever
+        </p>
+    </div>
+    <script>
+function handleDragOver(event) {
+    event.preventDefault();
+}
+
+function handleDrop(event, dropArea) {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        dropArea.innerHTML = '';
+        dropArea.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+}
+
+function handleFileSelect(event, dropAreaId) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        const dropArea = document.getElementById(dropAreaId);
+        dropArea.innerHTML = '';
+        dropArea.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+    // Reset input value to allow for the same file to be selected again
+    event.target.value = '';
+}
+
+function handleClick(dropAreaId) {
+    const inputElement = document.getElementById(`file-input${dropAreaId}`);
+    inputElement.value = ''; // Reset the input value
+    inputElement.click();
+}
+
+const dropAreas = document.querySelectorAll('.inner-square');
+dropAreas.forEach((dropArea, index) => {
+    dropArea.addEventListener('dragover', handleDragOver);
+    dropArea.addEventListener('drop', event => handleDrop(event, dropArea));
+    dropArea.addEventListener('click', () => handleClick(index + 1));
+});
+
+function addTodo() {
+    const todoInput = document.getElementById('todo-input');
+    const todoListUl = document.getElementById('todo-list-ul');
+    if (todoInput.value.trim() !== "") {
+        const li = document.createElement('li');
+        const checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
+        const text = document.createElement('span');
+        text.textContent = todoInput.value;
+        text.className = 'todo-text';
+        const deleteIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        deleteIcon.setAttribute("class", "delete-icon");
+        deleteIcon.setAttribute("viewBox", "0 0 24 24");
+        deleteIcon.innerHTML = '<path d="M3 6h18v2H3V6zm2 4h14v12H5V10zm5 2h2v8h-2v-8zm4 0h2v8h-2v-8zm3-10H7V2h10v2z"/>';
+        deleteIcon.onclick = () => todoListUl.removeChild(li);
+        li.appendChild(checkbox);
+        li.appendChild(text);
+        li.appendChild(deleteIcon);
+        todoListUl.appendChild(li);
+        todoInput.value = "";
+    }
+}
+
+function limitCharacters(element, maxChars) {
+    if (element.innerText.length > maxChars) {
+        element.innerText = element.innerText.substr(0, maxChars);
+    }
+}
+
+function handleKeyDown(event, element, maxChars) {
+    if (element.innerText.length >= maxChars && event.key !== 'Backspace' && event.key !== 'Delete' && !event.ctrlKey && !event.metaKey) {
+        event.preventDefault();
+    }
+}
+
+document.querySelector('.note-content').addEventListener('click', function(event) {
+    event.stopPropagation();
+    this.focus();
+});
+
+document.body.addEventListener('click', function(event) {
+    const noteContent = document.querySelector('.note-content');
+    noteContent.blur();
+});
+
+function rotateGradient(angle) {
+    document.querySelector('#split-gradient').setAttribute('gradientTransform', `rotate(${angle})`);
+}
+
+function positionSplit(offset) {
+    document.querySelector('#top-color').setAttribute('offset', `${offset}%`);
+    document.querySelector('#bottom-color').setAttribute('offset', `${offset}%`);
+}
+
+// Example usage: Rotate the gradient by 23.5 degrees and position the split at 70% height
+rotateGradient(23.5);
+positionSplit(30);
+
+let timer;
+let running = false;
+let startPauseButton = document.getElementById('startPauseButton');
+let startIcon = document.getElementById('startIcon');
+let pauseIcon = document.getElementById('pauseIcon');
+let hoursInput = document.getElementById('hoursInput');
+let minutesInput = document.getElementById('minutesInput');
+let secondsInput = document.getElementById('secondsInput');
+let progressCircle = document.querySelector('.progress-circle');
+let progress = document.getElementById('progress');
+const circumference = 2 * Math.PI * 70; // Updated circumference for radius 70
+let totalSeconds;
+let initialTotalSeconds;
+let paused = false;
+
+function validateInput(input, maxValue) {
+    let value = input.value.replace(/[^0-9]/g, '');
+    if (value.length > 2) {
+        value = value.slice(0, 2);
+    }
+    if (parseInt(value) > maxValue) {
+        value = maxValue.toString();
+    }
+    input.value = value;
+}
+
+function startPauseTimer() {
+    if (running) {
+        pauseTimer();
+    } else {
+        startTimer();
+    }
+}
+
+function startTimer() {
+    if (!paused) {
+        let hours = parseInt(hoursInput.value) || 0;
+        let minutes = parseInt(minutesInput.value) || 0;
+        let seconds = parseInt(secondsInput.value) || 0;
+        totalSeconds = hours * 3600 + minutes * 60 + seconds;
+        initialTotalSeconds = totalSeconds;
+    }
+
+    if (totalSeconds > 0) {
+        progressCircle.style.display = 'block';
+        running = true;
+        paused = false;
+        startIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+
+        timer = setInterval(() => {
+            if (totalSeconds <= 0) {
+                clearInterval(timer);
+                running = false;
+                startIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+                progressCircle.style.display = 'none';
+            } else {
+                totalSeconds--;
+                let hrs = Math.floor(totalSeconds / 3600);
+                let mins = Math.floor((totalSeconds % 3600) / 60);
+                let secs = totalSeconds % 60;
+                hoursInput.value = hrs.toString().padStart(2, '0');
+                minutesInput.value = mins.toString().padStart(2, '0');
+                secondsInput.value = secs.toString().padStart(2, '0');
+
+                // Update progress circle
+                let progressValue = totalSeconds / initialTotalSeconds;
+                progress.style.strokeDashoffset = circumference * (1 - progressValue);
+            }
+        }, 1000);
+    }
+}
+
+function pauseTimer() {
+    clearInterval(timer);
+    running = false;
+    paused = true;
+    startIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+}
+
+function stopTimer() {
+    clearInterval(timer);
+    running = false;
+    paused = false;
+    startIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+    progressCircle.style.display = 'none';
+    hoursInput.value = '00';
+    minutesInput.value = '00';
+    secondsInput.value = '00';
+    progress.style.strokeDashoffset = circumference;
+}
+
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const dayName = now.toLocaleString('en-US', { weekday: 'long' });
+
+    document.getElementById('day-name').innerText = dayName;
+    flipCard('hours', hours);
+    flipCard('minutes', minutes);
+}
+
+function flipCard(id, newValue) {
+    const card = document.getElementById(id);
+    const front = card.querySelector('.flip-card-front');
+    const back = card.querySelector('.flip-card-back');
+
+    if (front.innerText !== newValue) {
+        back.innerText = newValue;
+        card.classList.add('flip');
+
+        setTimeout(() => {
+            front.innerText = newValue;
+            card.classList.remove('flip');
+        }, 500);
+    }
+}
+
+setInterval(updateClock, 1000);
+updateClock(); // Initial call to display clock immediately
+</script>
+  <script>
+function handleDragOver(event) {
+    event.preventDefault();
+}
+
+function handleDrop(event, dropArea) {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        dropArea.innerHTML = '';
+        dropArea.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+}
+
+function handleFileSelect(event, dropAreaId) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        const dropArea = document.getElementById(dropAreaId);
+        dropArea.innerHTML = '';
+        dropArea.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+    // Reset input value to allow for the same file to be selected again
+    event.target.value = '';
+}
+
+// Functionality for the small square
+const smallSquare = document.getElementById('small-square');
+const smallSquareInput = document.getElementById('small-square-input');
+
+smallSquare.addEventListener('dragover', handleDragOver);
+smallSquare.addEventListener('drop', event => handleDrop(event, smallSquare));
+smallSquare.addEventListener('click', () => {
+    smallSquareInput.value = ''; // Reset the input value
+    smallSquareInput.click();
+});
+
+smallSquareInput.addEventListener('change', function(event) {
+    handleFileSelect(event, 'small-square');
+});
+</script>
+  <script>
+function limitCharacters(element, maxChars) {
+    if (element.innerText.length > maxChars) {
+        element.innerText = element.innerText.substr(0, maxChars);
+    }
+}
+
+function handleKeyDown(event, element, maxChars) {
+    if (element.innerText.length >= maxChars && event.key !== 'Backspace' && event.key !== 'Delete' && !event.ctrlKey && !event.metaKey) {
+        event.preventDefault();
+    }
+}
+</script>
+  <script>
+function limitCharactersWithPrefix(element, maxChars, prefix) {
+    if (element.innerText.length > maxChars) {
+        element.innerText = element.innerText.substr(0, maxChars);
+    }
+    if (!element.innerText.startsWith(prefix)) {
+        element.innerText = prefix + element.innerText.replace(new RegExp('^' + prefix), '');
+        const range = document.createRange();
+        const sel = window.getSelection();
+        range.setStart(element.childNodes[0], element.innerText.length);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+    }
+}
+
+function handleKeyDownWithPrefix(event, element, maxChars, prefix) {
+    if (element.innerText.length >= maxChars && event.key !== 'Backspace' && event.key !== 'Delete' && !event.ctrlKey && !event.metaKey) {
+        event.preventDefault();
+    }
+    if (!element.innerText.startsWith(prefix)) {
+        element.innerText = prefix + element.innerText.replace(new RegExp('^' + prefix), '');
+        const range = document.createRange();
+        const sel = window.getSelection();
+        range.setStart(element.childNodes[0], element.innerText.length);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+    }
+}
+</script>
+  <script>
+function limitCharacters(element, maxChars) {
+    if (element.innerText.length > maxChars) {
+        element.innerText = element.innerText.substr(0, maxChars);
+    }
+}
+
+function handleKeyDown(event, element, maxChars) {
+    if (element.innerText.length >= maxChars && event.key !== 'Backspace' && event.key !== 'Delete' && !event.ctrlKey && !event.metaKey) {
+        event.preventDefault();
+    }
+}
+
+document.querySelector('.bio-text').addEventListener('keydown', function(event) {
+    handleKeyDown(event, this, 57);  // You can adjust the maxChars as needed
+});
+
+document.querySelector('.bio-text').addEventListener('input', function() {
+    limitCharacters(this, 130);  // You can adjust the maxChars as needed
+});
+</script>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleButton = document.querySelector('.square-button');
+    let isSecondTheme = false;
+
+    themeToggleButton.addEventListener('click', () => {
+        isSecondTheme = !isSecondTheme;
+        if (isSecondTheme) {
+            switchToSecondTheme();
+        } else {
+            switchToFirstTheme();
+        }
+    });
+
+    function switchToSecondTheme() {
+        document.body.classList.add('second-theme');
+        loadParticles();
+    }
+
+    function switchToFirstTheme() {
+        document.body.classList.remove('second-theme');
+        destroyParticles();
+    }
+
+    function loadParticles() {
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 300,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.8,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 0.5,
+                        "opacity_min": 0.3,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 2,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.8,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 0.3,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 250,
+                        "size": 4,
+                        "duration": 2,
+                        "opacity": 0.8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    }
+
+    function destroyParticles() {
+        if (window.pJSDom && window.pJSDom.length > 0) {
+            window.pJSDom[0].pJS.fn.vendors.destroypJS();
+            window.pJSDom = [];
+        }
+    }
+});
+</script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleButton = document.querySelector('.square-button');
+    let isSecondTheme = false;
+
+    themeToggleButton.addEventListener('click', () => {
+        isSecondTheme = !isSecondTheme;
+        if (isSecondTheme) {
+            switchToSecondTheme();
+        } else {
+            switchToFirstTheme();
+        }
+    });
+
+    function switchToSecondTheme() {
+        document.body.classList.add('second-theme');
+        loadParticles();
+    }
+
+    function switchToFirstTheme() {
+        document.body.classList.remove('second-theme');
+        destroyParticles();
+    }
+
+    function loadParticles() {
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 300,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.8,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 0.5,
+                        "opacity_min": 0.3,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 2,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.8,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 0.3,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 250,
+                        "size": 4,
+                        "duration": 2,
+                        "opacity": 0.8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    }
+
+    function destroyParticles() {
+        if (window.pJSDom && window.pJSDom.length > 0) {
+            window.pJSDom[0].pJS.fn.vendors.destroypJS();
+            window.pJSDom = [];
+        }
+    }
+});
+</script>
+</body>
+</html>
