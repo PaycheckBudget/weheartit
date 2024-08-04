@@ -785,8 +785,10 @@
         .svg-button {
     position: absolute;
     cursor: pointer;
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
+    width: var(--svg-width, 50px); /* Default width */
+    height: var(--svg-height, 50px); /* Default height */
+    left: var(--svg-left, 0px); /* Default left position */
+    top: var(--svg-top, 0px); /* Default top position */
 }
 
 .svg-button img {
@@ -825,20 +827,24 @@
         </header>
     </div>
     <div class="content">
-        <div class="svg-button" style="left: 50px; top: 50px;">
-    <img src="https://raw.githubusercontent.com/PaycheckBudget/weheartit/main/images/Youtube%20page.svg" alt="Youtube Page">
+        <div class="svg-button" style="--svg-width: 50px; --svg-height: 50px; --svg-left: 50px; --svg-top: 50px;">
+    <img src="/mnt/data/Youtube Page.svg" alt="Youtube Page">
 </div>
 
-<div class="svg-button" style="left: 120px; top: 50px;">
-    <img src="https://raw.githubusercontent.com/PaycheckBudget/weheartit/main/images/Notebook%20page.svg" alt="Notebook Page">
+<div class="svg-button" style="--svg-width: 60px; --svg-height: 60px; --svg-left: 120px; --svg-top: 70px;">
+    <img src="/mnt/data/Notebook Page.svg" alt="Notebook Page">
 </div>
 
-<div class="svg-button" style="left: 190px; top: 50px;">
-    <img src="https://raw.githubusercontent.com/PaycheckBudget/weheartit/main/images/Dinner%20page.svg" alt="Dinner Page">
+<div class="svg-button" style="--svg-width: 55px; --svg-height: 55px; --svg-left: 190px; --svg-top: 90px;">
+    <img src="/mnt/data/Dinner Page.svg" alt="Dinner Page">
 </div>
 
-<div class="svg-button" style="left: 260px; top: 50px;">
-    <img src="https://raw.githubusercontent.com/PaycheckBudget/weheartit/main/images/Youtube%20page.svg" alt="YouTube Page">
+<div class="svg-button" style="--svg-width: 45px; --svg-height: 45px; --svg-left: 260px; --svg-top: 110px;">
+    <img src="/mnt/data/Photos Page.svg" alt="Photos Page">
+</div>
+
+<div class="svg-button" style="--svg-width: 65px; --svg-height: 65px; --svg-left: 330px; --svg-top: 130px;">
+    <img src="/mnt/data/Grocery Page.svg" alt="Grocery Page">
 </div>
         <div class="timer-container-wrapper">
             <div class="timer-container">
