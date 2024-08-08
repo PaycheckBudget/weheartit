@@ -791,20 +791,25 @@
     top: var(--svg-top, 0px); /* Default top position */
 }
 
-.svg-button img {
-    width: 100%;
-    height: 100%;
-}
-        .buttons .svg-button {
+.buttons .svg-button {
+    --svg-button-width: 50px; /* Default width */
+    --svg-button-height: 50px; /* Default height */
+    --svg-button-left: 0px; /* Default left position */
+    --svg-button-top: 0px; /* Default top position */
     margin: 0 5px;
-    padding: 10px;
+    padding: 0;
     background: none;
     border: none;
     cursor: pointer;
+    position: relative;
+    width: var(--svg-button-width);
+    height: var(--svg-button-height);
+    left: var(--svg-button-left);
+    top: var(--svg-button-top);
 }
 .buttons .svg-button svg {
-    width: 45px;
-    height: 45px;
+    width: 100%;
+    height: 100%;
 }
 </style>
 </head>
