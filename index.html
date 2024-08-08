@@ -795,27 +795,6 @@
     display: flex;
     align-items: center;
 }
-
-.buttons .svg-button {
-    --svg-button-width: 45px; /* Match the theme button width */
-    --svg-button-height: 45px; /* Match the theme button height */
-    --svg-button-left: 0px;
-    --svg-button-top: 0px;
-    margin: 0 5px; /* Space between buttons */
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: var(--svg-button-width);
-    height: var(--svg-button-height);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.buttons .svg-button svg {
-    width: 100%;
-    height: 100%;
-}
 </style>
 </head>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -831,17 +810,6 @@
             </div>
           <div id="particles-js"></div>
             <div class="buttons">
-                    <button class="svg-button" style="--svg-button-width: 45px; --svg-button-height: 45px; --svg-button-left: 0px; --svg-button-top: 0px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-            <defs>
-                <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#FF7969;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#FF3597;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <path fill="url(#cloudGradient)" d="M48,40H16c-4.418,0-8-3.582-8-8s3.582-8,8-8c0.602,0,1.191,0.069,1.76,0.199 C19.906,16.312,23.713,12,28.5,12c5.226,0,9.5,4.274,9.5,9.5c0,0.186-0.006,0.37-0.018,0.552C39.47,22.02,41.678,22,44,22 c5.523,0,10,4.477,10,10S49.523,40,44,40H48z"/>
-        </svg>
-    </button>
                 <button class="custom-button">My Small Business</button>
                 <button>Budget Planner</button>
                 <button class="square-button">
