@@ -795,6 +795,17 @@
     width: 100%;
     height: 100%;
 }
+        .buttons .svg-button {
+    margin: 0 5px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.buttons .svg-button svg {
+    width: 45px;
+    height: 45px;
+}
 </style>
 </head>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -823,6 +834,17 @@
                         <path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"/>
                     </svg>
                 </button>
+                <button class="svg-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="50" height="50">
+            <defs>
+                <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FF7969;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FF3597;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path fill="url(#cloudGradient)" d="M48,40H16c-4.418,0-8-3.582-8-8s3.582-8,8-8c0.602,0,1.191,0.069,1.76,0.199 C19.906,16.312,23.713,12,28.5,12c5.226,0,9.5,4.274,9.5,9.5c0,0.186-0.006,0.37-0.018,0.552C39.47,22.02,41.678,22,44,22 c5.523,0,10,4.477,10,10S49.523,40,44,40H48z"/>
+        </svg>
+    </button>
             </div>
         </header>
     </div>
